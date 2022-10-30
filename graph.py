@@ -56,3 +56,10 @@ class Graph:
 
     def __repr__(self):
         return str(self._adj)
+
+    # Remove vertex from graph
+    def remove_vertex(self, u):
+        for v in self.neighbors(u):
+            self.remove_edge(u, v)
+        self._adj[u] = []
+
